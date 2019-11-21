@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import SideBar from "./SideBar";
+import SideBar from "./Sidebar";
 import {connect} from "react-redux";
 import {toggleSideBar} from "../actions/index";
 import TodoList from "./TodoList";

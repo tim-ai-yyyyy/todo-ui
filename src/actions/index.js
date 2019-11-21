@@ -9,4 +9,3 @@ export const toggleSideBar = status => ({
     type: TOGGLE_SIDEBAR,
     payload: !status
 })
-
