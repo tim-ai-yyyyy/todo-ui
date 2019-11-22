@@ -2,7 +2,7 @@ version: '2.2'
 services:
   mysql-db:
     container_name: mysql01
-    image: mysql
+    image: mysql/mysqlserver:latest
     command: --init-file /data/application/init.sql
     volumes:
       - sqldata:/var/lib/mysql
