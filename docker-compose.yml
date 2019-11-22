@@ -1,0 +1,21 @@
+version: '2.2'
+services:
+  mysql-db:
+    container_name: mysql01
+    image: mysql
+    volumes:
+      - sqldata:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=KJ97TIM
+  api:
+    container_name: to-do-api_01
+    image: to-do-api
+    ports:
+      - 8090:8090
+    depends_on:
+      - mysql-db
+volumes:
+  sqldata:
+    external: false

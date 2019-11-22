@@ -2,7 +2,7 @@ import {Menu, Sidebar} from "semantic-ui-react";
 import React from "react";
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 import {connect} from "react-redux";
-import {addTodoList, toggleSideBar} from "../actions/index";
+import {addTodoList, toggleSideBar, getToDoList} from "../actions/index";
 
 class SideBar extends React.Component {
 
@@ -52,4 +52,4 @@ class SideBar extends React.Component {
 
 const mapStateToProps = state => ({ todo: state.todo, sideBarVisibility: state.sideBarVisibility })
 
-export default connect(mapStateToProps, { addTodoList, toggleSideBar })(SideBar);
+export default connect(mapStateToProps, { addTodoList, toggleSideBar , getToDoList})(SideBar);

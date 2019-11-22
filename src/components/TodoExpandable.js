@@ -4,10 +4,11 @@ import { Accordion, Label, Message } from 'semantic-ui-react'
 let options = []
 
 const mapToOptions = (props) => {
+    console.log(props);
     if(props.length !== 0){
         options = []
         props.forEach(item => {
-            options.push({key: item.name, title: item.name, content: {content: <div>{item.description}</div>}})
+            options.push({key: item.name, title: item.name, content: {content: <div id={item.name}>{item.description}</div>}})
         })
     }
 }

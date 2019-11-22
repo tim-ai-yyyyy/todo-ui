@@ -2,10 +2,14 @@ import React from 'react';
 import './App.css';
 import SideBar from "./Sidebar";
 import {connect} from "react-redux";
-import {toggleSideBar} from "../actions/index";
+import {toggleSideBar, getToDoList} from "../actions/index";
 import TodoList from "./TodoList";
 
 class App extends React.Component {
+    componentWillMount() {
+        this.props.getToDoList();
+    }
+
     render(){
         return (
             <div className="App">
@@ -22,4 +26,4 @@ class App extends React.Component {
 
 const mapStateToProps = state => ({ sideBarVisibility: state.sideBarVisibility })
 
-export default connect(mapStateToProps, { toggleSideBar })(App);
+export default connect(mapStateToProps, { toggleSideBar, getToDoList })(App);
