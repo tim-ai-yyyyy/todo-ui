@@ -3,8 +3,10 @@ services:
   mysql-db:
     container_name: mysql01
     image: mysql
+    command: --init-file /data/application/init.sql
     volumes:
       - sqldata:/var/lib/mysql
+      - ./init.sql:/data/application/init.sql
     ports:
       - 3306:3306
     environment:
